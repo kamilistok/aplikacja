@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('doctors', 'DoctorsController');
 Route::group([
     'middleware' =>'roles',
     'roles' => ['Admin']
