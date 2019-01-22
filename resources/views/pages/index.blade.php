@@ -13,6 +13,7 @@
             <th>Ulica</th>
             <th>Numer domu</th>
             <th>Numer telefonu</th>
+            <th>ID lekarza</th>
             <th>OPCJE</th>
 
         </tr>
@@ -26,6 +27,7 @@
             <td>{{ $page->street }}</td>
             <td>{{ $page->buildingNumber }}</td>
             <td>{{ $page->phoneNumber }}</td>
+            <td>{{ $page->doctorID }}</td>
             <td><a class="btn btn-info" href="{{route('pages.edit', $page)}}">Edytuj</a> </td>
             <td>
                 {!! Form::model($page, ['route'=> ['pages.delete', $page], 'method' => 'DELETE']) !!}

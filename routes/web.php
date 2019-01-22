@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('doctors', 'DoctorsController');
 Route::group([
     'middleware' =>'roles',
     'roles' => ['Admin']
 ], function() {
-    Route::get('pages', ['uses' => 'PagesController@index',
+    Route::get('pages', [
+        'uses' => 'PagesController@index',
         'as' => 'pages.index'
     ]);
 
@@ -50,6 +50,36 @@ Route::group([
     ]);
 
 });
+Route::group([
+    'middleware' =>'roles',
+    'roles' => ['Admin']
+], function() {
+
+    Route::get('registration', [
+        'uses' => 'RegistrationController@index',
+        'as' => 'registration.index'
+    ]);
+
+    Route::get('registration/create', [
+        'uses' => 'RegistrationController@create',
+        'as' => 'registration.create'
+    ]);
+
+    Route::post('registration/store', [
+        'uses' => 'RegistrationController@store',
+        'as' => 'registration.store'
+    ]);
+});
+Route::group([
+    'middleware' =>'roles',
+    'roles' => ['Admin']
+], function() {
+    Route::get('doctors', [
+        'uses' => 'DoctorsController@index',
+        'as' => 'doctors.index'
+    ]);
+});
+
 
 Auth::routes();
 

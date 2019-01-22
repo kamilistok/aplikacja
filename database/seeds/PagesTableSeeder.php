@@ -23,6 +23,7 @@ class PagesTableSeeder extends Seeder
             $page->street = $faker->streetName;
             $page->buildingNumber = $faker->numberBetween($min = 1, $max = 150);
             $page->phoneNumber = $faker->numberBetween($min = 600000000, $max = 999999999);
+            $page->doctorID=$faker->numberBetween($min = 1, $max = 3);
             $page->save();
         }
     }

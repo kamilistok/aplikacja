@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Pages extends Migration
+class Patients extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Pages extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('lastName');
@@ -34,6 +34,6 @@ class Pages extends Migration
      */
     public function down()
     {
-        Schema::drop('pages');
+        chema::drop('patients');
     }
 }

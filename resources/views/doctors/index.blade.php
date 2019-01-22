@@ -18,7 +18,7 @@
                 <td>{{$doctor->lastName}}</td>
                 <td>{{$doctor->specialization}}</td>
             </tr>
-            @endforeach
+        @endforeach
     </table>
 
 @endsection
