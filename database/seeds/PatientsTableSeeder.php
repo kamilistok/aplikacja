@@ -23,7 +23,6 @@ class PatientsTableSeeder extends Seeder
             $patient->street = $faker->streetName;
             $patient->buildingNumber = $faker->numberBetween($min = 1, $max = 150);
             $patient->phoneNumber = $faker->numberBetween($min = 600000000, $max = 999999999);
-            $patient->doctorID=$faker->numberBetween($min = 1, $max = 3);
             $patient->save();
         }
     }

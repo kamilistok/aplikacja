@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+
+            <a class="btn btn-primary" href="{{route('registration.create')}}">Dodaj pacjenta</a>
+
     <table class="table table-hover">
         <tr>
             <th>ID</th>
@@ -10,7 +13,6 @@
             <th>Ulica</th>
             <th>Numer domu</th>
             <th>Numer telefonu</th>
-            <th>ID lekarza</th>
             <th>OPCJE</th>
         </tr>
         @foreach($patients as $patient)
@@ -23,10 +25,27 @@
                 <td>{{ $patient->street }}</td>
                 <td>{{ $patient->buildingNumber }}</td>
                 <td>{{ $patient->phoneNumber }}</td>
-                <td>{{ $patient->doctorID }}</td>
-                <td><a class="btn btn-info" href="#">Edytuj</a>  <a class="btn btn-danger" href="#">Delete</a></td>
+                <td><a class="btn btn-info" href="{{route('registration.edit', $patient)}}">Edytuj</a> </td>
+                <td>
+                    {!! Form::model($patient, ['route'=> ['registration.delete', $patient], 'method' => 'DELETE']) !!}
+                    <button class="btn btn-danger" >Usuń</button>
+                    {!! Form::close() !!}
+                </td>
             </tr>
-            @endforeach
-            </table>
-    {{$patients->links()}}
+        @endforeach
+    </table>
+
+    <table style="width:25%">
+        <tr>
+            <th>{{$patients->links()}}</th>
+            <th><a class="btn btn-primary"  href="{{url('/home')}}">Powrót</a></th>
+        </tr>
+    </table>
+
+
+
+
+
+
+
 @endsection

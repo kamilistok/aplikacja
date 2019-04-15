@@ -15,10 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group([
-    'middleware' =>'roles',
-    'roles' => ['Admin']
-], function() {
+
     Route::get('pages', [
         'uses' => 'PagesController@index',
         'as' => 'pages.index'
@@ -49,11 +46,7 @@ Route::group([
         'as' => 'pages.delete'
     ]);
 
-});
-Route::group([
-    'middleware' =>'roles',
-    'roles' => ['Admin']
-], function() {
+//--------------------------------------------
 
     Route::get('registration', [
         'uses' => 'RegistrationController@index',
@@ -69,18 +62,52 @@ Route::group([
         'uses' => 'RegistrationController@store',
         'as' => 'registration.store'
     ]);
-});
-Route::group([
-    'middleware' =>'roles',
-    'roles' => ['Admin']
-], function() {
-    Route::get('doctors', [
-        'uses' => 'DoctorsController@index',
-        'as' => 'doctors.index'
+
+    Route::get('registration/edit/{patient}', [
+        'uses' => 'RegistrationController@edit',
+        'as'=> 'registration.edit'
     ]);
-});
+
+    Route::put('patients/{patient}', [
+        'uses' => 'RegistrationController@update',
+        'as'=> 'registration.update'
+    ]);
+
+    Route::delete('patients/{patient}', [
+        'uses' => 'RegistrationController@destroy',
+        'as' => 'registration.delete'
+    ]);
 
 
+    Route::get('workers', [
+        'uses' => 'WorkersController@index',
+        'as' => 'workers.index'
+    ]);
+
+    Route::get('workers/create', [
+    'uses' => 'WorkersController@create',
+    'as' => 'workers.create'
+    ]);
+
+    Route::post('workers/store', [
+    'uses' => 'WorkersController@store',
+    'as' => 'workers.store'
+    ]);
+
+    Route::get('workers/edit/{worker}', [
+    'uses' => 'WorkersController@edit',
+    'as'=> 'workers.edit'
+    ]);
+
+    Route::put('workers/{worker}', [
+    'uses' => 'WorkersController@update',
+    'as'=> 'workers.update'
+    ]);
+
+    Route::delete('workers/{worker}', [
+    'uses' => 'WorkersController@destroy',
+    'as' => 'workers.delete'
+    ]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -12,40 +12,14 @@
     @endif
 
     <div class="form-group">
-        {!! Form::label('name', "Imie:") !!}
-        {!! Form::text('name', $page->name, ['class'=>'form-control']) !!}
+        {!! Form::label('title', "Tytuł:") !!}
+        {!! Form::text('title', $page->title, ['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('lastName', "Nazwisko:") !!}
-        {!! Form::text('lastName', $page->lastName, ['class'=>'form-control']) !!}
+        {!! Form::label('content', "Teść:") !!}
+        {!! Form::textarea('content', $page->content, ['class'=>'form-control']) !!}
     </div>
-
-    <div class="form-group">
-        {!! Form::label('ZIPcode', "Numer dowodu osobistego:") !!}
-        {!! Form::text('ZIPcode', $page->ZIPcode, ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('city', "Miasto:") !!}
-        {!! Form::text('city', $page->city, ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('street', "Ulica:") !!}
-        {!! Form::text('street', $page->street, ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('buildingNumber', "Numer budynku:") !!}
-        {!! Form::text('buildingNumber', $page->buildingNumber, ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('phoneNumber', "Numer telefonu:") !!}
-        {!! Form::number('phoneNumber', $page->phoneNumber, ['class'=>'form-control']) !!}
-    </div>
-
     <div class="form-group">
         {!! Form::submit('Zapisz', ['class'=>'btn btn-primary']) !!}
         {!! link_to(URL::previous(), 'Powrót', ['class'=>'btn btn-default']) !!}

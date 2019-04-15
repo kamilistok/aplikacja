@@ -14,16 +14,10 @@ class PagesTableSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        for($i = 0; $i < 30; $i++) {
+        for($i = 0; $i < 3; $i++) {
             $page = new Pages();
-            $page->name = $faker->firstNameMale;
-            $page->lastName = $faker->lastName;
-            $page->ZIPcode = $faker->numberBetween($min = 000001, $max = 999999);
-            $page->city = $faker->city;
-            $page->street = $faker->streetName;
-            $page->buildingNumber = $faker->numberBetween($min = 1, $max = 150);
-            $page->phoneNumber = $faker->numberBetween($min = 600000000, $max = 999999999);
-            $page->doctorID=$faker->numberBetween($min = 1, $max = 3);
+            $page->title = 'Przykładowa notatka';
+            $page->content = 'Lorem ipsum';
             $page->save();
         }
     }

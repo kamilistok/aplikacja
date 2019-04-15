@@ -22,7 +22,6 @@ class Patients extends Migration
             $table->string('street');
             $table->string('buildingNumber');
             $table->string('phoneNumber');
-            $table->integer('doctorID');
             $table->timestamps();
         });
     }

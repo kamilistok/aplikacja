@@ -25,30 +25,16 @@ class PagesRequest extends FormRequest
     {
         return [
 
-            'name' => 'required',
-            'lastName' => 'required',
-            'ZIPcode' => 'required',
-            'city' => 'required',
-            'street' => 'required',
-            'buildingNumber' => 'required',
-            'phoneNumber' => 'required|max:9|min:9',
-
+            'title' => 'required',
+            'content' => 'required',
         ];
     }
 
         public function messages()
         {
             return [
-                'name.required' =>'Pole "imie" jest wymagane',
-                'lastName.required' => 'Pole "nazwisko" jest wymagane',
-                'ZIPcode.required' => 'Pole "numer dowodu osobistego" jest wymagane',
-                'city.required' => 'Pole "miasto" jest wymagane',
-                'street.required' => 'Pole "ulica" jest wymagane',
-                'buildingNumber.required' => 'Pole "numer budynku" jest wymagane',
-                'phoneNumber.required' => 'Pole "numer telefonu" jest wymagane',
-                'phoneNumber.max' => 'Pole "numer telefonu" musi mieć 9 cyfr',
-                'phoneNumber.min' => 'Pole "numer telefonu" musi mieć 9 cyfr'
-
+                'title.required' =>'Pole "tytuł" jest wymagane',
+                'content.required' => 'Pole "treść" jest wymagane',
             ];
         }
 }

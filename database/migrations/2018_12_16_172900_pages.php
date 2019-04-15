@@ -15,14 +15,8 @@ class Pages extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('lastName');
-            $table->string('ZIPcode');
-            $table->string('city');
-            $table->string('street');
-            $table->string('buildingNumber');
-            $table->string('phoneNumber');
-            $table->integer('doctorID');
+            $table->string('title');
+            $table->text('content');
             $table->timestamps();
         });
     }

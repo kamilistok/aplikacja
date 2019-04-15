@@ -59,34 +59,36 @@ class RegistrationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Patients $patient
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Patients $patient)
     {
-        //
+        return view('registration.edit', compact('patient'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  RegistrationRequest  $request
+     * @param  Patients $patient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RegistrationRequest $request, Patients $patient)
     {
-        //
+        $patient->update($request->all());
+        return redirect()->route('registration.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Patients $patient
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Patients $patient)
     {
-        //
+        $patient->delete();
+        return redirect()->route('registration.index');
     }
 }

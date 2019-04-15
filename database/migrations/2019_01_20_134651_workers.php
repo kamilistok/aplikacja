@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Doctors extends Migration
+class Workers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class Doctors extends Migration
      */
     public function up()
     {
-        Schema::create('doctors', function (Blueprint $table) {
+        Schema::create('workers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('lastName');
-            $table->string('specialization');
+            $table->string('function');
+            $table->integer('earnings');
             $table->timestamps();
+
         });
     }
     /**
@@ -28,6 +30,6 @@ class Doctors extends Migration
      */
     public function down()
     {
-        Schema::drop('pages');
+        Schema::drop('workers');
     }
 }

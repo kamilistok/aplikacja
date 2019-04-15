@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Doctors;
+use App\Http\Requests\WorkersRequest;
+use App\Workers;
 use App\User;
 use Illuminate\Http\Request;
 
-class DoctorsController extends Controller
+class WorkersController extends Controller
 {
 
     public function __construct()
@@ -21,8 +22,8 @@ class DoctorsController extends Controller
     public function index()
     {
 
-        $doctors = Doctors::all();
-        return view('doctors.dindex', compact('doctors'));
+        $workers = Workers::all();
+        return view('workers.index', compact('workers'));
     }
 
     /**
@@ -32,18 +33,20 @@ class DoctorsController extends Controller
      */
     public function create()
     {
-        //
+        return view('workers.create', compact('workers'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  WorkersRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(WorkersRequest $request)
     {
-        //
+        Workers::create($request->all());
+        return redirect()->route('workers.index');
+
     }
 
     /**
@@ -60,34 +63,36 @@ class DoctorsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Workers $worker
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Workers $worker)
     {
-        //
+        return view('workers.edit', compact('worker'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  WorkersRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(WorkersRequest $request, Workers $worker)
     {
-        //
+        $worker->update($request->all());
+        return redirect()->route('workers.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Workers $worker
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Workers $worker)
     {
-        //
+        $worker->delete();
+        return redirect()->route('workers.index');
     }
 }
