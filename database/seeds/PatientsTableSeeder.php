@@ -19,11 +19,14 @@ class PatientsTableSeeder extends Seeder
             $patient->name = $faker->firstNameMale;
             $patient->lastName = $faker->lastName;
             $patient->ZIPcode = $faker->numberBetween($min = 000001, $max = 999999);
+            $patient->PESEL = 99999999999;
             $patient->city = $faker->city;
             $patient->street = $faker->streetName;
             $patient->buildingNumber = $faker->numberBetween($min = 1, $max = 150);
             $patient->phoneNumber = $faker->numberBetween($min = 600000000, $max = 999999999);
+            $patient->card_id = $faker->numberBetween(1,30);
             $patient->save();
         }
     }
+
 }

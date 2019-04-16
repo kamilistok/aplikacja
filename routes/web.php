@@ -46,7 +46,6 @@ Route::get('/', function () {
         'as' => 'pages.delete'
     ]);
 
-//--------------------------------------------
 
     Route::get('registration', [
         'uses' => 'RegistrationController@index',
@@ -108,6 +107,11 @@ Route::get('/', function () {
     'uses' => 'WorkersController@destroy',
     'as' => 'workers.delete'
     ]);
+
+Route::get('cards', [
+    'uses' => 'CardsController@index',
+    'as' => 'cards.index'
+]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

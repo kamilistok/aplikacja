@@ -27,6 +27,7 @@ class RegistrationRequest extends FormRequest
 
             'name' => 'required',
             'lastName' => 'required',
+            'PESEL' => 'required|max:11|min:11',
             'ZIPcode' => 'required',
             'city' => 'required',
             'street' => 'required',
@@ -40,6 +41,8 @@ class RegistrationRequest extends FormRequest
         return [
             'name.required' =>'Pole "imie" jest wymagane',
             'lastName.required' => 'Pole "nazwisko" jest wymagane',
+            'PESEL.max' => 'Pole "numer telefonu" musi mieć 11 cyfr',
+            'PESEL.min' => 'Pole "numer telefonu" musi mieć 11 cyfr',
             'ZIPcode.required' => 'Pole "numer dowodu osobistego" jest wymagane',
             'city.required' => 'Pole "miasto" jest wymagane',
             'street.required' => 'Pole "ulica" jest wymagane',

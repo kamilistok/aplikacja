@@ -8,6 +8,7 @@
             <th>ID</th>
             <th>Imie</th>
             <th>Nazwisko</th>
+            <th>PESEL</th>
             <th>Numer dowodu</th>
             <th>Miasto</th>
             <th>Ulica</th>
@@ -20,6 +21,7 @@
                 <td>{{ $patient->id }}</td>
                 <td>{{ $patient->name }}</td>
                 <td>{{ $patient->lastName }}</td>
+                <td>{{ $patient->PESEL }}</td>
                 <td>{{ $patient->ZIPcode }}</td>
                 <td>{{ $patient->city }}</td>
                 <td>{{ $patient->street }}</td>

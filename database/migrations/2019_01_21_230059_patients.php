@@ -17,12 +17,14 @@ class Patients extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('lastName');
+            $table->char('PESEL');
             $table->string('ZIPcode');
             $table->string('city');
             $table->string('street');
             $table->string('buildingNumber');
             $table->string('phoneNumber');
             $table->timestamps();
+            $table->card()->attach($patient_id);
         });
     }
 

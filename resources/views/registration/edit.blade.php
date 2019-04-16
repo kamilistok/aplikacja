@@ -22,6 +22,11 @@
     </div>
 
     <div class="form-group">
+        {!! Form::label('PESEL', "PESEL:") !!}
+        {!! Form::number('PESEL', $patient->PESEL, ['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
         {!! Form::label('ZIPcode', "Numer dowodu osobistego:") !!}
         {!! Form::text('ZIPcode', $patient->ZIPcode, ['class'=>'form-control']) !!}
     </div>
