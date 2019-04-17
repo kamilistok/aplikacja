@@ -19,7 +19,7 @@ class CardsController extends Controller
      */
     public function index()
     {
-        $cards = Cards::all();
+        $cards = Card::all();
         return view('cards.index', compact('cards'));
     }
 

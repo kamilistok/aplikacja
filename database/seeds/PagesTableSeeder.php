@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Pages;
+use App\Page;
 
 class PagesTableSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class PagesTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         for($i = 0; $i < 3; $i++) {
-            $page = new Pages();
+            $page = new Page();
             $page->title = 'Przykładowa notatka';
             $page->content = 'Lorem ipsum';
             $page->save();

@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Workers extends Model
+class Page extends Model
 {
     protected  $fillable = [
-        'name', 'lastName', 'function', 'earnings'
+        'title', 'content','created_at','updated_at'
     ];
-
 }

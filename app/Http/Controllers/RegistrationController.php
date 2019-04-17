@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\RegistrationRequest;
-use App\Patients;
+use App\Patient;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -19,7 +19,7 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        $patients = Patients::orderBy('id', 'DESC')->paginate(10);
+        $patients = Patient::orderBy('id', 'DESC')->paginate(10);
         return view('registration.index', compact('patients'));
     }
 
@@ -41,7 +41,7 @@ class RegistrationController extends Controller
      */
     public function store(RegistrationRequest $request)
     {
-        Patients::create($request->all());
+        Patient::create($request->all());
         return redirect()->route('registration.index');
     }
 
@@ -59,10 +59,10 @@ class RegistrationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Patients $patient
+     * @param  \App\Patient $patient
      * @return \Illuminate\Http\Response
      */
-    public function edit(Patients $patient)
+    public function edit(Patient $patient)
     {
         return view('registration.edit', compact('patient'));
     }
