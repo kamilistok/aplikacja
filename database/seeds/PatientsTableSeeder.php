@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Patients;
+use App\Patient;
 
 class PatientsTableSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class PatientsTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         for($i = 0; $i < 30; $i++) {
-            $patient = new Patients();
+            $patient = new Patient();
             $patient->name = $faker->firstNameMale;
             $patient->lastName = $faker->lastName;
             $patient->ZIPcode = $faker->numberBetween($min = 000001, $max = 999999);
@@ -24,7 +24,6 @@ class PatientsTableSeeder extends Seeder
             $patient->street = $faker->streetName;
             $patient->buildingNumber = $faker->numberBetween($min = 1, $max = 150);
             $patient->phoneNumber = $faker->numberBetween($min = 600000000, $max = 999999999);
-            $patient->card_id = $faker->numberBetween(1,30);
             $patient->save();
         }
     }

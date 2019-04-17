@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Cards;
 
 class CardsTableSeeder extends Seeder
 {
@@ -12,6 +11,6 @@ class CardsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Cards::class, 5)->create();
+        factory(\App\Card::class, 5)->create();
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PagesRequest;
-use App\Pages;
+use App\Page;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -22,7 +22,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $pages = Pages::orderBy('id', 'DESC')->paginate(10);
+        $pages = Page::orderBy('id', 'DESC')->paginate(10);
 
         return view('pages.index', compact('pages'));
 
@@ -46,7 +46,7 @@ class PagesController extends Controller
      */
     public function store(PagesRequest $request)
     {
-        Pages::create($request->all());
+        Page::create($request->all());
         return redirect()->route('pages.index');
     }
 
@@ -67,7 +67,7 @@ class PagesController extends Controller
      * @param  \App\Pages $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pages $page)
+    public function edit(Page $page)
     {
         return view('pages.edit', compact('page'));
     }
@@ -91,7 +91,7 @@ class PagesController extends Controller
      * @param  Pages $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pages $page)
+    public function destroy(Page $page)
     {
         $page->delete();
         return redirect()->route('pages.index');

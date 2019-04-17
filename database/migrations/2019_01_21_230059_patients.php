@@ -24,7 +24,6 @@ class Patients extends Migration
             $table->string('buildingNumber');
             $table->string('phoneNumber');
             $table->timestamps();
-            $table->card()->attach($patient_id);
         });
     }
 

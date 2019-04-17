@@ -19,13 +19,14 @@ class Cards extends Migration
             $table->text('addiction');
             $table->text('medicines');
             $table->text('diseases');
+            $table->unsignedInteger('patient_id');
             $table->timestamps();
         });
 
-        Schema::table('patients', function (Blueprint $table) {
-            $table->foreign('card_id')
+        Schema::table('cards', function (Blueprint $table) {
+            $table->foreign('patient_id')
                 ->references('id')
-                ->on('cards');
+                ->on('patients');
         });
     }
 

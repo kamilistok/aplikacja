@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Workers;
+use App\Worker;
 
 class WorkersTableSeeder extends Seeder
 {
@@ -12,28 +12,28 @@ class WorkersTableSeeder extends Seeder
      */
     public function run()
     {
-        $worker = new Workers();
+        $worker = new Worker();
         $worker->name = 'Jan';
         $worker->lastName = 'Nowak';
         $worker->function = 'Doktor';
         $worker->earnings = 5000;
         $worker->save();
 
-        $worker = new Workers();
+        $worker = new Worker();
         $worker->name = 'Krzysztof';
         $worker->lastName = 'Kowal';
         $worker->function = 'Doktor';
         $worker->earnings = 5000;
         $worker->save();
 
-        $worker = new Workers();
+        $worker = new Worker();
         $worker->name = 'Beata';
         $worker->lastName = 'Nowak';
         $worker->function = 'Doktor';
         $worker->earnings = 5000;
         $worker->save();
 
-        $worker = new Workers();
+        $worker = new Worker();
         $worker->name = 'Jan';
         $worker->lastName = 'Mnich';
         $worker->function = 'Recepcjonista';
