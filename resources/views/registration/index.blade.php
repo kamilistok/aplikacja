@@ -33,6 +33,8 @@
                     <button class="btn btn-danger" >Usuń</button>
                     {!! Form::close() !!}
                 </td>
+                <td><a class="btn btn-warning" href="{{route('cards.edit', $patient)}}">Karta pacjenta</a> </td>
+
             </tr>
         @endforeach
     </table>

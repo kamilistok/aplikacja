@@ -64,7 +64,7 @@ class PagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pages $page
+     * @param  \App\Page $page
      * @return \Illuminate\Http\Response
      */
     public function edit(Page $page)
@@ -76,10 +76,10 @@ class PagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  PagesRequest  $request
-     * @param  Pages $page
+     * @param  Page $page
      * @return \Illuminate\Http\Response
      */
-    public function update(PagesRequest $request, Pages $page)
+    public function update(PagesRequest $request, Page $page)
     {
         $page->update($request->all());
         return redirect()->route('pages.index');
@@ -88,7 +88,7 @@ class PagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Pages $page
+     * @param  Page $page
      * @return \Illuminate\Http\Response
      */
     public function destroy(Page $page)

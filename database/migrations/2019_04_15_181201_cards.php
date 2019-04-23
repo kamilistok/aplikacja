@@ -26,7 +26,8 @@ class Cards extends Migration
         Schema::table('cards', function (Blueprint $table) {
             $table->foreign('patient_id')
                 ->references('id')
-                ->on('patients');
+                ->on('patients')
+                ->onDelete('cascade');
         });
     }
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\WorkersRequest;
-use App\Workers;
+use App\Worker;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -22,7 +22,7 @@ class WorkersController extends Controller
     public function index()
     {
 
-        $workers = Workers::all();
+        $workers = Worker::all();
         return view('workers.index', compact('workers'));
     }
 
@@ -44,7 +44,7 @@ class WorkersController extends Controller
      */
     public function store(WorkersRequest $request)
     {
-        Workers::create($request->all());
+        Worker::create($request->all());
         return redirect()->route('workers.index');
 
     }
@@ -63,10 +63,10 @@ class WorkersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Workers $worker
+     * @param  \App\Worker $worker
      * @return \Illuminate\Http\Response
      */
-    public function edit(Workers $worker)
+    public function edit(Worker $worker)
     {
         return view('workers.edit', compact('worker'));
     }
@@ -78,7 +78,7 @@ class WorkersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(WorkersRequest $request, Workers $worker)
+    public function update(WorkersRequest $request, Worker $worker)
     {
         $worker->update($request->all());
         return redirect()->route('workers.index');
@@ -87,10 +87,10 @@ class WorkersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Workers $worker
+     * @param  Worker $worker
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workers $worker)
+    public function destroy(Worker $worker)
     {
         $worker->delete();
         return redirect()->route('workers.index');

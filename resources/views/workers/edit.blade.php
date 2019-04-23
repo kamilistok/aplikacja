@@ -28,7 +28,7 @@
 
     <div class="form-group">
         {!! Form::label('earnings', "Zarobki:") !!}
-        {!! Form::number('earnings', $worker->city, ['class'=>'form-control']) !!}
+        {!! Form::number('earnings', $worker->earnings, ['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('Zapisz', ['class'=>'btn btn-primary']) !!}

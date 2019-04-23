@@ -17,12 +17,12 @@ class Patients extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('lastName');
-            $table->char('PESEL');
+            $table->bigInteger('PESEL');
             $table->string('ZIPcode');
             $table->string('city');
             $table->string('street');
             $table->string('buildingNumber');
-            $table->string('phoneNumber');
+            $table->bigInteger('phoneNumber');
             $table->timestamps();
         });
     }
@@ -34,6 +34,7 @@ class Patients extends Migration
      */
     public function down()
     {
-        chema::drop('patients');
+        Schema::drop('patients');
+        Schema::drop('cards');
     }
 }

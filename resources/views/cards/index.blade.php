@@ -2,10 +2,9 @@
 @section('content')
 
     <table class="table table-hover">
+
         <tr>
             <th>ID Pacjenta</th>
-            <th>Imie</th>
-            <th>Nazwisko</th>
             <th>Grupa krwi</th>
             <th>Uzależnienia</th>
             <th>Leki stałe</th>
@@ -13,8 +12,7 @@
         </tr>
         @foreach($cards as $card)
             <tr>
-                <td>{{ $card->id }}</td>
-                <td>{{ $card->patientID }}</td>
+                <td>{{ $card->patient_id }}</td>
                 <td>{{ $card->blood }}</td>
                 <td>{{ $card->addiction }}</td>
                 <td>{{ $card->medicines }}</td>

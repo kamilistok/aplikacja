@@ -112,6 +112,16 @@ Route::get('cards', [
     'uses' => 'CardsController@index',
     'as' => 'cards.index'
 ]);
+
+Route::get('cards/edit/{card}', [
+    'uses' => 'CardsController@edit',
+    'as'=> 'cards.edit'
+]);
+
+Route::put('cards/{card}', [
+    'uses' => 'CardsController@update',
+    'as'=> 'cards.update'
+]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

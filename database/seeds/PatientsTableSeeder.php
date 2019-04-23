@@ -12,14 +12,14 @@ class PatientsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
-
+        $faker = \Faker\Factory::create('pl_PL');
+        $faker->addProvider(new Faker\Provider\pl_PL\Person($faker));
         for($i = 0; $i < 30; $i++) {
             $patient = new Patient();
             $patient->name = $faker->firstNameMale;
             $patient->lastName = $faker->lastName;
             $patient->ZIPcode = $faker->numberBetween($min = 000001, $max = 999999);
-            $patient->PESEL = 99999999999;
+            $patient->PESEL =  $faker->pesel;
             $patient->city = $faker->city;
             $patient->street = $faker->streetName;
             $patient->buildingNumber = $faker->numberBetween($min = 1, $max = 150);

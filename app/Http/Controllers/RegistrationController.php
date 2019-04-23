@@ -19,7 +19,8 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        $patients = Patient::orderBy('id', 'DESC')->paginate(10);
+
+        $patients = Patient::orderBy('id')->paginate(10);
         return view('registration.index', compact('patients'));
     }
 
@@ -71,10 +72,10 @@ class RegistrationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  RegistrationRequest  $request
-     * @param  Patients $patient
+     * @param  Patient $patient
      * @return \Illuminate\Http\Response
      */
-    public function update(RegistrationRequest $request, Patients $patient)
+    public function update(RegistrationRequest $request, Patient $patient)
     {
         $patient->update($request->all());
         return redirect()->route('registration.index');
@@ -83,10 +84,10 @@ class RegistrationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Patients $patient
+     * @param  Patient $patient
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patients $patient)
+    public function destroy(Patient $patient)
     {
         $patient->delete();
         return redirect()->route('registration.index');

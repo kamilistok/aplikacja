@@ -11,8 +11,7 @@
             <th>Nazwisko</th>
             <th>Stanowisko</th>
             <th>Zarobki</th>
-            <th>EDYTUJ</th>
-            <th>USUŃ</th>
+            <th>OPCJE</th>
 
         </tr>
 

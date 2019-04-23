@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Http\Requests\CardsRequest;
 use Illuminate\Http\Request;
-use App\Cards;
+use App\Card;
+
 
 
 class CardsController extends Controller
@@ -58,24 +61,25 @@ class CardsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Card $card
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Card $card)
     {
-        //
+        return view('cards.edit', compact('card'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  CardsRequest $request
+     * @param  Card $card
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CardsRequest $request, Card $card)
     {
-        //
+        $card->update($request->all());
+        return redirect()->route('registration.index');
     }
 
     /**
@@ -88,4 +92,5 @@ class CardsController extends Controller
     {
         //
     }
+
 }

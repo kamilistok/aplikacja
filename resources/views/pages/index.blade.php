@@ -5,11 +5,12 @@
 
     <table class="table table-hover">
         <tr>
-            <th>ID</th>
+            <th>Numer</th>
             <th>Tytuł</th>
             <th>Treść</th>
             <th>Data utworzenia</th>
             <th>Data edycji</th>
+            <th>Opcje</th>
         </tr>
     @foreach($pages as $page)
         <tr>

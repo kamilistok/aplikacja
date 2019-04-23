@@ -1,5 +1,5 @@
 <?php
-
+use App\Card;
 use Illuminate\Database\Seeder;
 
 class CardsTableSeeder extends Seeder
@@ -11,6 +11,14 @@ class CardsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Card::class, 5)->create();
+        factory(\App\Card::class, 200)->create();
+
+        DB::table('cards')->update([
+            'blood' => "",
+            'addiction' => "Brak",
+            'medicines' => "Brak",
+            'diseases' => "Brak",
+        ]);
+
     }
 }
