@@ -51,9 +51,6 @@
         {!! Form::number('phoneNumber', null, ['class'=>'form-control']) !!}
     </div>
 
-
-
-
     <div class="form-group">
         {!! Form::submit('Zapisz', ['class'=>'btn btn-primary']) !!}
         {!! link_to(URL::previous(), 'Powrót', ['class'=>'btn btn-default']) !!}

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-            <a class="btn btn-primary" href="{{route('registration.create')}}">Dodaj pacjenta</a>
+    <a class="btn btn-primary" href="{{route('registration.create')}}">Dodaj pacjenta</a>
 
     <table class="table table-hover">
         <tr>
@@ -34,7 +34,6 @@
                     {!! Form::close() !!}
                 </td>
                 <td><a class="btn btn-warning" href="{{route('cards.edit', $patient)}}">Karta pacjenta</a> </td>
-
             </tr>
         @endforeach
     </table>
@@ -45,11 +44,6 @@
             <th><a class="btn btn-primary"  href="{{url('/home')}}">Powrót</a></th>
         </tr>
     </table>
-
-
-
-
-
-
-
 @endsection
+
+

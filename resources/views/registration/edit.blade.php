@@ -1,9 +1,6 @@
 @extends('layout')
-
 @section('content')
-
     {!! Form::model($patient,['route' => ['registration.update', $patient], 'method'=> 'PUT']) !!}
-
 
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -51,16 +48,14 @@
         {!! Form::number('phoneNumber', $patient->phoneNumber, ['class'=>'form-control']) !!}
     </div>
 
-
     <div class="form-group">
         {!! Form::submit('Zapisz', ['class'=>'btn btn-primary']) !!}
         {!! link_to(URL::previous(), 'Powrót', ['class'=>'btn btn-default']) !!}
     </div>
 
-
     {!! Form::close() !!}
 
-
-
-
 @endsection
+
+
+
