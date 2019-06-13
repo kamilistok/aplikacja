@@ -1,9 +1,7 @@
 @extends('layout')
-
 @section('content')
 
     {!! Form::model($worker,['route' => ['workers.update', $worker], 'method'=> 'PUT']) !!}
-
 
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -35,10 +33,7 @@
         {!! link_to(URL::previous(), 'Powrót', ['class'=>'btn btn-default']) !!}
     </div>
 
-
     {!! Form::close() !!}
 
-
-
-
 @endsection
+

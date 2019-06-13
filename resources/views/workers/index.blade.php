@@ -12,7 +12,6 @@
             <th>Stanowisko</th>
             <th>Zarobki</th>
             <th>OPCJE</th>
-
         </tr>
 
         @foreach($workers as $worker)
@@ -28,9 +27,7 @@
                     <button class="btn btn-danger" >Usuń</button>
                     {!! Form::close() !!}
                 </td>
-
             </tr>
-
         @endforeach
     </table>
 
@@ -40,6 +37,5 @@
         </tr>
     </table>
 
-
-
 @endsection
+

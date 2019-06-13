@@ -25,10 +25,7 @@
         {!! link_to(URL::previous(), 'Powrót', ['class'=>'btn btn-default']) !!}
     </div>
 
-
     {!! Form::close() !!}
 
-
-
-
 @endsection
+
