@@ -4,7 +4,6 @@
 
     {!! Form::model($card,['route' => ['cards.update', $card], 'method'=> 'PUT']) !!}
 
-
     @if($errors->any())
         @foreach($errors->all() as $error)
             <div class="btn btn-danger">{{$error}}</div>
@@ -29,7 +28,7 @@
     </div>
     <div class="form-group">
         {!! Form::label('diseases', "Przebyte choroby:") !!}
-        {!! Form::text('diseases', $card->diseases, ['class'=>'form-control']) !!}
+        {!! Form::textarea('diseases', $card->diseases, ['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('Zapisz', ['class'=>'btn btn-primary']) !!}
